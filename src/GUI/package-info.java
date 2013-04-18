@@ -1,8 +1,7 @@
+
 /**
- * 
- */
-/**
- * @author Guillaume.Cornet
- *
+ * Maurice Phutthavong
+ * Charles Bizet
+ * Guillaume Cornet
  */
 package GUI;

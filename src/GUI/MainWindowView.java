@@ -14,8 +14,11 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Window.Type;
 
-public class MainWindowView extends JFrame 
-{
+public class MainWindowView extends JFrame {
+	
+	/*
+	 * Variables de classe
+	 */
 
 	private JPanel contentPane;
 	
@@ -24,34 +27,55 @@ public class MainWindowView extends JFrame
 	private JPanel cardFrame;
 	private JPanel ticketFrame;
 	private JPanel receiptFrame;
+	
+	JLabel lblBillet = new JLabel("Billet");
+	JLabel lblEditeurRecu = new JLabel("Fente reçu");
+	JLabel lblLecteurCarte = new JLabel("Fente pour CB");
+	JLabel lblPad = new JLabel("Pavé numérique");
+	JLabel lblScreenPrincipale = new JLabel("Ecran DAB");
+	
 	/**
-	 * Create the frame.
+	 * Méthodes de classe
 	 */
+	
 	public MainWindowView() {
-		setTitle("Projet DAB");
-		setBackground(Color.LIGHT_GRAY);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 658, 502);
+		setTitle("Projet DAB"); // nom de l'applet
+		//setBackground(Color.BLACK);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 658, 502); // emplacement de l'applet à 100px h/v avec une fenêtre de 658*502
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane); // affichage du container
+		
+		/**
+		 * Attribution des couleurs pour les différentes zones du DAB
+		 */
 		
 		mainFrame = new JPanel();
-		mainFrame.setBackground(new Color(176, 224, 230));
-		mainFrame.setToolTipText("Screen principale");
+		mainFrame.setBackground(new Color(0, 224, 230));
+		mainFrame.setToolTipText("Ecran DAB");
 		
 		padFrame = new JPanel();
-		padFrame.setBackground(new Color(176, 224, 230));
+		padFrame.setBackground(new Color(176, 0, 230));
 		
 		cardFrame = new JPanel();
-		cardFrame.setBackground(new Color(176, 224, 230));
+		cardFrame.setBackground(new Color(176, 224, 0));
 		
 		ticketFrame = new JPanel();
-		ticketFrame.setBackground(new Color(176, 224, 230));
+		ticketFrame.setBackground(new Color(255, 224, 230));
 		
 		receiptFrame = new JPanel();
-		receiptFrame.setBackground(new Color(176, 224, 230));
+		receiptFrame.setBackground(new Color(176, 255, 230));
+		
+		/**
+		 *  Instanciation d'un Group Layout pour l'interface graphique
+		 */
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		
+		/**
+		 * Positionnement horizonatal des Layouts
+		 */
+		
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
@@ -69,6 +93,11 @@ public class MainWindowView extends JFrame
 							.addComponent(receiptFrame, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(23, Short.MAX_VALUE))
 		);
+		
+		/**
+		 * Positionnement vertical des Layouts
+		 */
+		
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
@@ -86,29 +115,24 @@ public class MainWindowView extends JFrame
 					.addContainerGap())
 		);
 		
-		/** Mettre ces JLabel en haut */
+		/**
+		 * Instanciation des labels pour l'interface
+		 */
 		
-		JLabel lblBillet = new JLabel("Billet");
-		lblBillet.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblBillet.setFont(new Font("Calibri", Font.PLAIN, 18));
 		ticketFrame.add(lblBillet);
 		
-		JLabel lblEditeurRecu = new JLabel("Editeur recu");
-		lblEditeurRecu.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblEditeurRecu.setFont(new Font("Calibri", Font.PLAIN, 18));
 		receiptFrame.add(lblEditeurRecu);
 		
-		JLabel lblLecteurCarte = new JLabel("Lecteur Carte");
-		lblLecteurCarte.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblLecteurCarte.setFont(new Font("Calibri", Font.PLAIN, 18));
 		cardFrame.add(lblLecteurCarte);
 		
-		JLabel lblPad = new JLabel("Pad");
-		lblPad.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblPad.setFont(new Font("Calibri", Font.PLAIN, 18));
 		padFrame.add(lblPad);
 		
-		JLabel lblScreenPrincipale = new JLabel("Screen principale");
-		lblScreenPrincipale.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblScreenPrincipale.setFont(new Font("Calibri", Font.PLAIN, 18));
 		mainFrame.add(lblScreenPrincipale);
-		contentPane.setLayout(gl_contentPane);
-		
-		
+		contentPane.setLayout(gl_contentPane);		
 	}
 }
