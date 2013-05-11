@@ -1,8 +1,8 @@
 /**
- * 
+ * Banque represent
  */
 /**
  * @author Guillaume.Cornet
  *
  */
-package Main;
+package model;

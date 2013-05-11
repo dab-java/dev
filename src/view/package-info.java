@@ -1,8 +1,8 @@
 /**
- * 
+ * Represent the Bank
  */
 /**
  * @author Guillaume.Cornet
  *
  */
-package GUI;
+package view;
